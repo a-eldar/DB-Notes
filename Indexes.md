@@ -121,7 +121,7 @@ WHERE age > 58;
 Then
 - Step 1: Still only ~={purple}6=~ I/O operations to traverse tree
 - Step 2: Read all relevant leaves, again ~={purple}5,556=~
-- Step 3: Access matching rows - new
+- Step 3: Access matching rows - ++new++
 - So remember we have ~={yellow}50,000=~ rows.
 - Each row might be in a different block
 - **Total:** ~={purple}6=~ + ~={purple}5,556=~ + ~={yellow}50,000=~ = ~={purple}55,562=~ I/O operations
@@ -132,7 +132,7 @@ Indexes may not always be the best choice. Sometimes it would actually be better
 ```PostgreSQL
 SELECT avg(price)
 FROM Orders
-WHERE itemId - 'i242'
+WHERE itemId = 'i242';
 ```
 Suppose we have an index on `itemId`.
 Also Assume
@@ -153,7 +153,7 @@ Then using the index:
 - Step 2: ~={red}1000=~/~={green}49=~ = 21
 - Step 3: ~={red}1000=~ to access the relevant blocks...
 - **Total:** 1024
-which is more than the full table scan.
+which is ==more than the full table scan==.
 
 # Creating An Index
 ```PostgreSQL

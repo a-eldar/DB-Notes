@@ -2,6 +2,7 @@
 # Intro
 Suppose we two tables `Sailors` and `Reserves` for sailors and their reservations of boats. Now say we want to compute their [[SQL#Queries#Join#Natural Join|natural join]].
 If we have enough space in memory for all the blocks of `Sailors` and `Reserves` **and** the output of the join, then we're good, but we might not always have that.
+
 Instead, at the worst case scenario, if we just have 3 pages, one for each, we can:
 Hold one block from `Sailors`, one block from `Reserves` and one block for the output, and then swap a block for the next when we are done with it.
 
@@ -53,14 +54,22 @@ Regardless of the number of pages available in memory, we will need exactly **4*
 One for $R$ blocks, one for $S$ blocks, one for the index search and one for the output.
 ## Pseudo Code
 Let's assume $R(D,E),S(E,F)$ are the tables and we have an index on $S.E$.
-```peudo
-for each block b of R:
-	read b to memory
-	for each tuple (d,e) in b:
-		search the index on S.E for e
-		for each index entry (e,tupleId):
-			access S at tupleId to retrieve (e,f)
-			add (d,e,f) to the output
+```pseudo
+\begin{algorithm}
+\caption{Index Nested Loops Join}
+\begin{algorithmic}
+\ForAll {block $b$ of $R$}
+	\State read $b$ to memory
+	\ForAll{tuple $(d,e) \in b$}
+		\State search the index on $S.E$ for $e$
+		\ForAll {index entry ($e$, $\texttt{tupleId}$)}
+			\State access $S$ at $\texttt{tupleId}$ to retrieve $(e,f)$
+			\State add $(d,e,f)$ to the output
+		\EndFor
+    \EndFor
+\EndFor
+\end{algorithmic}
+\end{algorithm}
 ```
 ## Complexity
 Suppose $B(T')$ is the number of blocks in table $T'$.
