@@ -40,3 +40,21 @@ So in total
 $$
 \large B(R) + T(R)\cdot\text{cost\_of\_select}
 $$
+# 2-Phase Merge Sort
+$$
+\left\lceil  \frac{B(R)}{M}  \right\rceil <M
+$$
+# Estimating Selectivity
+The whole note is full of mathematical estimations so I recommend just going over it.
+[[Estimating Selectivity]]
+# Query Plans
+## Calculating Runtime Of Join
+Denote with $E_{R},E_{S}$ the results of operations on $R,S$ prior to performing the join operation according to the query plan.
+### Block Nested Loops Join
+$$
+\large\text{Read}(E_{R})+ \text{Read}(E_{S})\cdot \left\lceil  \frac{B(E_{R})}{M-2}  \right\rceil
+$$
+### Index Nested Loops Join
+$$
+\large\text{Read}(E_{R}) + T(E_{R})\cdot \text{cost\_of\_select}
+$$

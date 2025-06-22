@@ -5,7 +5,7 @@
 Refers to a schema design that satisfies certain principles.
 There are questions for when we should use normalization.
 The common "principle" is:
-"Normalize 'till it hurts, de-normalize 'till it works."
+"*Normalize 'till it hurts, de-normalize 'till it works.*"
 ## Main Advantages
 - Updates run quickly
 - Inserts run quickly
@@ -26,7 +26,7 @@ In our example:
 ![[Pasted image 20250527173836.png]]
 ### Duplication Problem
 There is still a problem with that.
-In our example, we can see the the `OffPhone` data is duplicated. This, generally speaking is a waste of storage.
+In our example, we can see the the `OffPhone` data is duplicated. This, generally speaking, is a waste of storage.
 
 As a general rule, we don't duplicate information, because it's a waste of storage and it makes it harder to update the value (in our case, update the office phone number).
 
@@ -206,9 +206,9 @@ $$
 The algorithm would work something like:
 Take $K=AB$ as initial key.
 Pull $AB$ from queue
-- Take $C\to DA\in F$ - $AB\cap DA=A$
+- Take $C\to DA\in F$  ─  $AB\cap DA=A$
   $S=BC,S'=C$
-- Take $AD\to B\in F$ - $AB\cap B=B$
+- Take $AD\to B\in F$  ─  $AB\cap B=B$
   $S=S'=AD$
 
 Queue = $\{ C,AD \}$

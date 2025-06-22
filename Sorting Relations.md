@@ -57,7 +57,6 @@ Step 1 algorithm is
 Sorting $b_{left},\dots,b_{right}$ means sorting all of the rows across the $M$ blocks.
 For sorting the blocks in place we can simply use quick sort, since now the entire data sorted is in memory.
 ~={blue}In this part we read $R$ once and we wrote it once so it took $2B(R)$ I/O operations.=~
-
 ### Step 2
 In this step we merge the sorted sequences from step 1.
 We do this in the most natural way:

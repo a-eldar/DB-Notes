@@ -237,7 +237,7 @@ $\{ A\to B, EJ\to G, EJ\to H, ACD\to E \}$
 Each dependency is contained in a schema
 #### Lossless
 Can go back to [[Decompositions#Lossless Join Decomposition|here]] to remember how we check.
-Intuitively, it's because every dependency exists in a schema, and we have a schema which is a superkey. So when using the table algorithm to check lossless, the row with the superkey will have be all **a**'s.
+Intuitively, it's because every dependency exists in a schema, and we have a schema which is a superkey. So when using the table algorithm to check lossless, the row with the superkey will have to be all **a**'s.
 #### Every subschema is in 3NF
 $XA$ is necessarily 3NF because $X$ is a key there (by way of construction of $X$).
 (Proof omitted)

@@ -1,7 +1,7 @@
 2nd note in *Design Theory*
 
 ---
-Recall [[Semester B/DB/Design Theory/Framework#Database Normalization#First Normal Form|First Normal Form]]. Here we will see 3NF and BCNF (aka 4NF).
+Recall [[Semester B/DB/Design Theory/Framework#Database Normalization#First Normal Form|First Normal Form]]. Here we will see 3NF and BCNF.
 # Redundancy In Tables
 A value in a table is redundant if it can be derived based on other tuples, using the functional dependencies.
 For example if

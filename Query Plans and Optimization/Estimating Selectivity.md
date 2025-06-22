@@ -118,7 +118,7 @@ $$
 If we add that $A$ is a **key** in $R$ and a **foreign key** in $S$
 then for every row of $S$ we expect $R$ to have **exactly one** matching row.
 Hence the result is $T(S)$.
-This works with the previous formula, when you realize:
+==This works with the previous formula==, when you realize:
 $$
 \max\{ V(R,A),V(S,A) \}=V(R,A)
 $$
