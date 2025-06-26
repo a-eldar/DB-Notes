@@ -113,3 +113,25 @@ So we can now also use weak entity sets to "capture" combinations of entities
 (such as (actor $\times$ film) for actors playing in films)
 and give that weak entity a relationship of the actor winning a prize for that film.
 The weak entity would, of course, be identified using Actor and Film.
+# Translating Diagrams To Relations
+Translating an entity is done using its name and its attributes (with ++underline++ for the key).
+
+For a relationship, we take its name, and its attributes with the ++keys++ of the entities in the relationship.
+If the relationship has a triangular arrow, the key of the relationship would not include **one** of the keys of the triangular arrows.
+If the relationship is between two entities and has a round arrow, we just include the key of the round arrow entity in the schema of the other entity.
+If the relationship is between many entities and has a round arrow, we do it like in the case of the triangular arrow.
+
+For a weak entity relationship, we add the key of the strong entity in the key of the weak entity schema.
+## Translating ISA
+In the case of [[#Inheritance]] we have multiple approaches.
+### ER Style Conversion
+We create a relation for each entity set like so:
+![[Pasted image 20250626131027.png]]
+Meaning an entity may appear in several relations.
+### Object-Oriented Approach
+We create a relation for each possible combination of entities:
+![[Pasted image 20250626131417.png]]
+Meaning `MoviePerson` would be someone who is not an actor nor a director, etc.
+If we know, for example, that there can't be movie persons who are both actors and directors, we can drop that one.
+### Null Value Approach
+Create a single relation for all entities, and put `NULL` for values not applicable.

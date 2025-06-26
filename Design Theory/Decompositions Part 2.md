@@ -141,8 +141,7 @@ So, the decomposition does **not** preserve dependencies.
 # BCNF or 3NF
 Our end goal was, after all, to normalize the relations. So let's see if a decomposition is successful in doing that.
 ## Algorithm For $R_{i}$
-Determining the normal form $R_{i}$ requires computing $F_{R_{i}}$ which takes exponential time.
-But we have no choice...
+Determining the normal form of $R_{i}$ requires computing $F_{R_{i}}$ which takes exponential time. But we have no choice...
 ```pseudo
 \begin{algorithm}
 \caption{Computing a set of dependencies equivalent to $F_{R_i}$}
