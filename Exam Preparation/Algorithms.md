@@ -16,7 +16,7 @@
 \end{algorithm}
 ```
 ## Step 2
-Take one block from each sorted sequence into memory, and then simply merge-sort them.
+Iteratively take one block from each sorted sequence into memory, and then simply merge-sort them.
 ## Runtime
 $3B(R)$ I/O operations
 # Join Algorithms
@@ -34,7 +34,7 @@ $$
 \large B(S)+B(R)\left\lceil  \frac{B(S)}{M-2}  \right\rceil 
 $$
 $$
-\large\text{Read}(E_{R})+ \text{Read}(E_{S})\cdot \left\lceil  \frac{B(E_{R})}{M-2}  \right\rceil
+\large\text{Read}(E_{S})+ \text{Read}(E_{R})\cdot \left\lceil  \frac{B(E_{S})}{M-2}  \right\rceil
 $$
 ## Index Nested Loops Join
 Let's assume $R(D,E),S(E,F)$ are the tables and we have an index on $S.E$.
@@ -62,7 +62,7 @@ $$
 \large\text{Read}(E_{R}) + T(E_{R})\cdot \text{cost\_of\_select}
 $$
 ---
-Design Theory
+=={lightblue}Design Theory==
 ==================
 # Closure And Keys
 ## Closure Algorithm
